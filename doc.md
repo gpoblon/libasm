@@ -69,10 +69,16 @@ mov ebx, 0
 int 80h
 ```
 
+# ASM DOC
+## Stack
+The stack is made of 8octets (if 64b cpu) elements.
+The `rsp` reg always points to the last stacked elem.
+To add one, call the `pushq` (64b) instruction, to remove the last one, use `popq`
+
 ## Projet 42
-créer la bibliotheque `libft.a` en NASM 64bits en syntaxe *Intel* (!= *AT&T*).
+créer la bibliotheque `libfts.a` en NASM 64bits, donc en syntaxe *Intel* (!= *AT&T*).
 Makefile habituel + main de test qui compile avec la bibliotheque
-Pas d'ASM inline: faire des `.s`
+Pas d'ASM inline (= dans des *.c*), utiliser l'ext *.s`*
 ! calling convention
 
 ### Functions:
@@ -88,10 +94,10 @@ Pas d'ASM inline: faire des `.s`
 - `ft_puts` (bien entendu, vous pouvez appeller le syscall `write`)
 
 Puis en utilisant les *Instruction Repeat String operations* (https://software.intel.com/en-us/articles/intel-sdm)):
-- `strlen`
-- `memset`
-- `memcpy`
-- `strdup` (bien entendu, vous pouvez appeller `malloc`)
+- `ft_strlen`
+- `ft_memset`
+- `ft_memcpy`
+- `ft_strdup` (bien entendu, vous pouvez appeller `malloc`)
 
 Puis
 - `void ft_cat(int fd);` qui a le même comportement que la commande `cat`
@@ -99,3 +105,4 @@ Puis
 Puis bonus: ajouter d'autres fonctions de notre choix
 
 Note: le changement de contexte entre l’user-space et lekernel-space coûte cher en performances donc vous serez pénalisés si vous en abusez
+
