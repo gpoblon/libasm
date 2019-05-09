@@ -1,28 +1,29 @@
-%define MACH_SYSCALL(nb)    0x2000000 | nb
-%define STDOUT              1
-%define WRITE               4
+%define MACH_SYSCALL(nb)	0x2000000 | nb
+%define STDOUT				1
+%define WRITE				4
 
-section .data
+	section	.data
 hello:
-    .string db "Hello World!", 10
-    .len equ $ - hello.string
+	.string db	"Hello World!", 10
+	.len equ	$ - hello.string
 
-section .text
-    global start
-    global _main
+
+	section	.text
+	global	start
+	global	_main
 
 start:
-    call _main
-    ret
+	call	_main
+	ret
 
 _main:
-    push rpb
-    mov rpb, rsp
-    sub rsp, 16
-    mov rdi, 1
-    lea rsi, [rel hello.string]
-    mov rdx, hello.len
-    mov rax, MACH_SYSCALL(WRITE)
-    syscall
-    leave
-    ret
+	push	rpb
+	mov		rpb, rsp
+	sub		rsp, 16
+	mov		rdi, 1
+	lea		rsi, [hello.string]
+	mov		rdx, hello.len
+	mov		rax, MACH_SYSCALL(WRITE)
+	syscall
+	leave
+	ret

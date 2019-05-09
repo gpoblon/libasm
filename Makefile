@@ -1,9 +1,5 @@
 NAME		=	libfts.a
 
-
-INC			=	\
-inc/libfts.h
-
 SRC			=	\
 ft_hw.s \
 ft_isalpha.s \
@@ -22,13 +18,12 @@ ft_strlen.s \
 ft_strdup.s \
 ft_cat.s
 
-INC_D		=	inc/
 SRC_D		=	src/
 OBJ_D		=	obj/
 OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.s=.o))
 
 CC			=	nasm
-FLAGS		=	-f macho64 elf64
+FLAGS		=	-f macho
 
 all: $(NAME)
 
@@ -37,8 +32,8 @@ $(NAME): $(OBJ_D) $(OBJ_P)
 			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files...\t💯 ️ done creating object files$(WHITE)\n"
 			@printf "$(CYAN)$(PROJECT) | $(GREEN)🆗  static lib created from object files$(WHITE)\n"
 
-$(OBJ_D)%.o: $(SRC_D)%.s $(INC)
-			@$(CC) -c $< -o $@ $(FLAGS)  -I $(INC_D)
+$(OBJ_D)%.o: $(SRC_D)%.s
+			@$(CC) $(FLAGS) $< -o $@
 			@printf "$(OVERRIDE)$(CYAN)$(PROJECT) | $(GREEN)⌛  source to object files... $(YELLOW)%*s$(WHITE)" $(CURSOR_R) "$< "
 
 $(OBJ_D):
@@ -54,7 +49,7 @@ RED			=	`echo "\033[31m"`
 YELLOW		=	`echo "\033[33m"`
 OVERRIDE	=	`echo "\r\033[K"`
 CURSOR_R	=	`echo "$$(tput cols) - 37"|bc`
-PROJECT		=	"LIBASM"
+PROJECT		=	"LIBFTASM"
 
 clean:
 			@rm -rf $(OBJ_D)
