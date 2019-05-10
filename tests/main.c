@@ -15,11 +15,11 @@ int		main(int argc, char **argv)
 	int				err;
 
 	if (argc != 3)
-		return (err_print("USAGE ERROR: [c] [str]"));
+		return (err_print("\n(./test)USAGE ERROR: [c] [str]"));
 	c = (unsigned int)argv[1][0];
-	str_len = strlen(argv[1]);
+	str_len = strlen(argv[2]);
 	str = (char *)malloc(sizeof(char) * str_len);
-	str = argv[1];
+	str = argv[2];
 	err += test_isdigit(c);
 	err += test_isalpha(c);
 	err += test_isascii(c);
@@ -33,8 +33,8 @@ int		main(int argc, char **argv)
 	err += test_bzero((void*)str, strlen(argv[1]));
 	if (err)
 	{
-		printf ("%d TESTS FAILED\n", err);
+		printf ("\n(./test)%d TESTS FAILED\n", err);
 		return (EXIT_FAILURE);
-	}		
+	}
 	return (EXIT_SUCCESS);
 }

@@ -3,7 +3,7 @@
 
 int	test_isdigit(int c)
 {
-	printf("\tTEST isdigit\n");
+	printf("\n\t\033[36mTEST isdigit\033[0m\n");
 	if (ft_isdigit(c) != isdigit(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -11,7 +11,7 @@ int	test_isdigit(int c)
 
 int	test_isalpha(int c)
 {
-	printf("\tTEST isalpha\n");
+	printf("\n\t\033[36mTEST isalpha\033[0m\n");
 	if (ft_isalpha(c) != isalpha(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -19,7 +19,7 @@ int	test_isalpha(int c)
 
 int	test_isascii(int c)
 {
-	printf("\tTEST isascii\n");
+	printf("\n\t\033[36mTEST isascii\033[0m\n");
 	if (ft_isascii(c) != isascii(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -27,7 +27,7 @@ int	test_isascii(int c)
 
 int	test_isalnum(int c)
 {
-	printf("\tTEST isalnum\n");
+	printf("\n\t\033[36mTEST isalnum\033[0m\n");
 	if (ft_isalnum(c) != isalnum(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -35,7 +35,7 @@ int	test_isalnum(int c)
 
 int	test_isprint(int c)
 {
-	printf("\tTEST isprint\n");
+	printf("\n\t\033[36mTEST isprint\033[0m\n");
 	if (ft_isprint(c) != isprint(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -43,7 +43,7 @@ int	test_isprint(int c)
 
 int	test_tolower(int c)
 {
-	printf("\tTEST tolower\n");
+	printf("\n\t\033[36mTEST tolower\033[0m\n");
 	if (ft_tolower(c) != tolower(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -51,7 +51,7 @@ int	test_tolower(int c)
 
 int	test_toupper(int c)
 {
-	printf("\tTEST toupper\n");
+	printf("\n\t\033[36mTEST toupper\033[0m\n");
 	if (ft_toupper(c) != toupper(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
@@ -59,24 +59,28 @@ int	test_toupper(int c)
 
 int	test_puts(char const *s)
 {
-	printf("\tTEST puts\n");
+	printf("\n\t\033[36mTEST puts\033[0m\n");
+	if (puts(s) != ft_puts(s))
+		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
 
 int	test_strlen(const char *s)
 {
-	printf("\tTEST strlen\n");
+	printf("\n\t\033[36mTEST strlen\033[0m\n");
+	if (strlen(s) != ft_strlen(s))
+		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
 
 int	test_strcat(char *dest, const char *src)
 {
-	printf("\tTEST strcat\n");
+	printf("\n\t\033[36mTEST strcat\033[0m\n");
 	return (EXIT_SUCCESS);
 }
 
 int	test_bzero(void *s, size_t n)
 {
-	printf("\tTEST bzero\n");
+	printf("\n\t\033[36mTEST bzero\033[0m\n");
 	return (EXIT_SUCCESS);
 }

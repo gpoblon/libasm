@@ -12,7 +12,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-void	ft_puts(char const *s);
+int		ft_puts(char const *s);
 size_t	ft_strlen(const char *s);
 char	*strcat(char *dest, const char *src);
 
