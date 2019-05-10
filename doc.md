@@ -62,6 +62,9 @@ realarray:      resq    10              ; array of ten reals
 `syscall`		Invoke an operating system routine
 `db`			A pseudo-instruction that declares bytes that will be in memory when the program runs
 
+### Jumps
+
+
 ### Syscalls
 Semblable a une fonction:
 `eax` 			contient le numéro de la tâche à effectuer

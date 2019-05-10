@@ -1,12 +1,7 @@
 section .data
 
 section .text
-    global start
-    global _main
+    global _ft_isprint
 
-start:
-    call _main
-    ret
-
-_main:
+_ft_isprint:
     ret

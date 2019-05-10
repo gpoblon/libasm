@@ -17,11 +17,11 @@ start:
 	ret
 
 _main:
-	push	rpb
-	mov		rpb, rsp
+	push	rbp
+	mov		rbp, rsp
 	sub		rsp, 16
 	mov		rdi, 1
-	lea		rsi, [hello.string]
+	lea		rsi, [rel hello.string]
 	mov		rdx, hello.len
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall

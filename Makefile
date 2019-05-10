@@ -11,11 +11,11 @@ ft_toupper.s \
 ft_tolower.s \
 ft_puts.s \
 ft_bzero.s \
+ft_strlen.s
 ft_strcat.s \
-ft_memset.s \
-ft_memcpy.s \
-ft_strlen.s \
-ft_strdup.s \
+# ft_memset.s \
+# ft_memcpy.s \
+# ft_strdup.s \
 ft_cat.s
 
 SRC_D		=	src/
@@ -23,7 +23,7 @@ OBJ_D		=	obj/
 OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.s=.o))
 
 CC			=	nasm
-FLAGS		=	-f macho
+FLAGS		=	-f macho64
 
 all: $(NAME)
 
@@ -48,7 +48,7 @@ GREEN		=	`echo "\033[32m"`
 RED			=	`echo "\033[31m"`
 YELLOW		=	`echo "\033[33m"`
 OVERRIDE	=	`echo "\r\033[K"`
-CURSOR_R	=	`echo "$$(tput cols) - 37"|bc`
+CURSOR_R	=	`echo "$$(tput cols) - 39"|bc`
 PROJECT		=	"LIBFTASM"
 
 clean:

@@ -1,15 +1,7 @@
 section .data
-hello:
-    .string db "Hello World!", 10
-    .len equ $ - hello.string
 
 section .text
-    global start
-    global _main
+    global _ft_isalnum
 
-start:
-    call _main
-    ret
-
-_main:
+_ft_isalnum:
     ret
