@@ -84,3 +84,10 @@ int	test_bzero(void *s, size_t n)
 	printf("\n\t\033[36mTEST bzero\033[0m\n");
 	return (EXIT_SUCCESS);
 }
+
+int	err_print(char *s)
+{
+	write(1, s, strlen(s));
+	write(1, "\n", 1);
+	return (EXIT_FAILURE);
+}

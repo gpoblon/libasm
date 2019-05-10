@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+int		ft_test(int c);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

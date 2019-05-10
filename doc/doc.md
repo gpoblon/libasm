@@ -51,6 +51,8 @@ realarray:      resq    10              ; array of ten reals
 - *.text*: contient notre code 
 
 ### Instructions
+
+#### Instructions de mouvement
 `mov	x, y`	x ← y
 `and	x, y` 	x ← x and y
 `or		x, y`	x ← x or y
@@ -59,11 +61,27 @@ realarray:      resq    10              ; array of ten reals
 `sub	x, y` 	x ← x – y
 `inc	x`		x ←  x + 1
 `dec	x`		x ←  x – 1
-`syscall`		Invoke an operating system routine
+
+#### Jumps
+`je`			jump to a label if the previous comparison was equal
+`jne`			jump if not equal
+`jl`			jump if less)
+`jnl`			jump if not less
+`jg`			jump if greater)
+`jng`			jump if not greater
+`jle`			jump if less or equal
+`jnle`			jump if not less or equal
+`jge`			jump if greater or equal
+`jnge`			jump if not greater or equal)
+etc...
+
+#### 
+`push	x`		Decrement rsp by the size of the operand, then store x in [rsp]
+`pop	x`		Move [rsp] into x, then increment rsp by the size of the operand
+`jnz	label` 	If the processor’s Z (zero) flag, is set, jump to the given label
+`call	label`	Push the address of the next instruction, then jump to the label
 `db`			A pseudo-instruction that declares bytes that will be in memory when the program runs
-
-### Jumps
-
+`ret`			Pop into the instruction pointer 
 
 ### Syscalls
 Semblable a une fonction:

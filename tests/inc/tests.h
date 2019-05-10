@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <string.h>
 
+int		err_print(char *s);
+int		ft_test(int c);
+
 int		test_isdigit(int c);
 int		test_isalpha(int c);
 int		test_isascii(int c);

@@ -2,6 +2,7 @@ NAME		=	libfts.a
 
 SRC			=	\
 ft_hw.s \
+ft_test.s \
 ft_isalpha.s \
 ft_isdigit.s \
 ft_isalnum.s \

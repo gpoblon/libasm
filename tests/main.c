@@ -1,10 +1,9 @@
 #include "inc/tests.h"
 
-int		err_print(char *s)
+static void	test_test(int c)
 {
-	write(1, s, strlen(s));
-	write(1, "\n", 1);
-	return (EXIT_FAILURE);
+	printf("\n\t\033[33mHAVE FUN WITH FT_TEST\033[0m\n");
+	printf("returned value=|%d|\n", ft_test(c));
 }
 
 int		main(int argc, char **argv)
@@ -20,6 +19,7 @@ int		main(int argc, char **argv)
 	str_len = strlen(argv[2]);
 	str = (char *)malloc(sizeof(char) * str_len);
 	str = argv[2];
+	test_test(c);
 	err += test_isdigit(c);
 	err += test_isalpha(c);
 	err += test_isascii(c);
@@ -28,12 +28,12 @@ int		main(int argc, char **argv)
 	err += test_tolower(c);
 	err += test_toupper(c);
 	err += test_strlen(str);
-	err += test_strcat(str, "CATTED");
-	err += test_puts(str);
-	err += test_bzero((void*)str, strlen(argv[1]));
+	// err += test_strcat(str, "CATTED");
+	// err += test_puts(str);
+	// err += test_bzero((void*)str, strlen(argv[1]));
 	if (err)
 	{
-		printf ("\n(./test)%d TESTS FAILED\n", err);
+		printf ("\n(./test)\033[33m%d TESTS FAILED\033[0m\n", err);
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
