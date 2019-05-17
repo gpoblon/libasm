@@ -4,8 +4,8 @@
 
 	section	.data
 hello:
-	.string db	"Hello World!", 10
-	.len equ	$ - hello.string
+	.string	db "Hello World!", 10
+	.len	equ $ - hello.string
 
 
 	section	.text
