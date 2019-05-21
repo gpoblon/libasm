@@ -13,7 +13,7 @@ else
 	if [ $ftres -eq 1 ]; then
 		printf "\n(test.sh)\033[31mTEST(S) FAILED\033[0m\n"
 	else
-		printf "\n(test.sh)\032[34mALL TESTS PASSED\033[0m\n"
+		printf "\n(test.sh)\033[34mALL TESTS PASSED\033[0m\n"
 	fi
 fi
 rm -rf ./test

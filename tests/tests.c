@@ -3,7 +3,7 @@
 
 int	test_isdigit(int c)
 {
-	printf("\n\t\033[36mTEST isdigit\033[0m\n");
+	printf("\n\t\033[36mTEST isdigit\033[0m\n\tc = |%d|\n", c);
 	if (ft_isdigit(c) != isdigit(c))
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);

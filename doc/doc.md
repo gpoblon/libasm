@@ -19,7 +19,7 @@ Les instructions ont cette forme: `instruction destination source
 ### Registres
 Un registre est une zone de memoire tres rapide, interne au microprocesseur (il y en a une dizaine). Les registres font 16 bits (`ax`) ou 32 bits lorsqu'ils sont *extended* (`eax` `ebx`, `ecx`... 4 octets). Les 16 bits peuvent etre separes en 2 registres de 8 bits (`al` + `ah`)
 
-EAX,AX,AH,AL : *Accumulator register* utilisé pour l'I/O, les claculs, les interruptions, on y met les retours de fonctions de mémoire
+EAX,AX,AH,AL : *Accumulator register* utilisé pour l'I/O, les calculs, les interruptions, on y met les retours de fonctions de mémoire (1e arg)
 EBX,BX,BH,BL : *Base register* utilisé comme un pointeur vers de la mémoire, on y met le retour de certains interrupts
 ECX,CX,CH,CL : *Counter register* utilisé comme index de boucles et opérations binaires (shift) et certains interrupts
 EDX,DX,DH,DL : *Data register* utilisé pour l'I/Os, arithmetic, certains interrupts.

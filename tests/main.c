@@ -2,8 +2,11 @@
 
 static void	test_test(int c)
 {
+    int a, b, ret;
+    
 	printf("\n\t\033[33mHAVE FUN WITH FT_TEST\033[0m\n");
-	printf("returned value=|%d|\n", ft_test(c));
+
+	printf("returned value=|%d|\n", ret);
 }
 
 int		main(int argc, char **argv)
@@ -19,15 +22,15 @@ int		main(int argc, char **argv)
 	str_len = strlen(argv[2]);
 	str = (char *)malloc(sizeof(char) * str_len);
 	str = argv[2];
-	test_test(c);
+	// test_test(c);
 	err += test_isdigit(c);
-	err += test_isalpha(c);
+	// err += test_isalpha(c);
 	err += test_isascii(c);
-	err += test_isalnum(c);
-	err += test_isprint(c);
-	err += test_tolower(c);
-	err += test_toupper(c);
-	err += test_strlen(str);
+	// err += test_isalnum(c);
+	// err += test_isprint(c);
+	// err += test_tolower(c);
+	// err += test_toupper(c);
+	// err += test_strlen(str);
 	// err += test_strcat(str, "CATTED");
 	// err += test_puts(str);
 	// err += test_bzero((void*)str, strlen(argv[1]));

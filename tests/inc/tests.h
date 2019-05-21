@@ -8,7 +8,7 @@
 #include <string.h>
 
 int		err_print(char *s);
-int		ft_test(int c);
+int		ft_test(int a, int b);
 
 int		test_isdigit(int c);
 int		test_isalpha(int c);
