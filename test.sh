@@ -5,7 +5,7 @@ make 1> /dev/null
 printf "(test.sh) Compiling tests...\n"
 gcc tests/tests.c tests/main.c -Itests/ -L./ -lfts -o test
 printf "(test.sh) Executing tests...\n"
-./test $1 $2
+./test
 ftres=$?
 if [ $ftres -eq 139 ]; then
 	printf "\n(test.sh)\033[31mSEGMENTATION FAULT !\033[0m\n"

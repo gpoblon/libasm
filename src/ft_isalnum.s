@@ -1,7 +1,14 @@
-section .data
-
 section .text
-    global _ft_isalnum
+	global	_ft_isalnum
+	extern	_ft_isalpha
+	extern	_ft_isdigit
 
 _ft_isalnum:
-    ret
+	call	_ft_isalpha
+	cmp		rax, 1
+	je		end
+
+	call	_ft_isdigit
+
+end:
+   ret

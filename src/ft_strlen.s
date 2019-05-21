@@ -1,7 +1,7 @@
 section .data
 
 section .text
-    global _ft_strlen
+	global _ft_strlen
 
 _ft_strlen:
-    ret
+	ret

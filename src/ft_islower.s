@@ -1,13 +1,13 @@
 section .text
-    global	_ft_isdigit
+    global	_ft_islower
 
-_ft_isdigit:
+_ft_islower:
 	xor		rax, rax
 
-	cmp		rdi, 48
+	cmp		rdi, 97
 	jl		end
 
-	cmp		rdi, 57
+	cmp		rdi, 122
 	jg		end
 
 	inc		rax
