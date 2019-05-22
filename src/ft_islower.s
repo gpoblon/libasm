@@ -11,6 +11,7 @@ _ft_islower:
 	jg		end
 
 	inc		rax
+	ret
 
 end:
 	ret

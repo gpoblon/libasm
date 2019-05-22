@@ -9,6 +9,7 @@ _ft_isalnum:
 	je		end
 
 	call	_ft_isdigit
+	ret
 
 end:
    ret

@@ -11,6 +11,7 @@ _ft_isupper:
 	jg		end
 
 	inc		rax
+	ret
 
 end:
 	ret

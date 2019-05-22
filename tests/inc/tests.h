@@ -16,6 +16,8 @@ int     test_isascii(void);
 int     test_isdigit(void);
 int     test_islower(void);
 int     test_isupper(void);
+int     test_tolower(void);
+int     test_toupper(void);
 int     test_isprint(void);
 
 int		test_strlen(void);

@@ -11,7 +11,6 @@ ft_isalnum.s \
 ft_isascii.s \
 ft_isprint.s \
 ft_isspace.s \
-ft_ispunct.s \
 ft_toupper.s \
 ft_tolower.s \
 ft_puts.s \

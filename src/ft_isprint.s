@@ -5,15 +5,16 @@ section .text
 	extern	_ft_isspace
 
 _ft_isprint:
-   call		_ft_isalnum
-	cmp		rax, 1
-	je			end
+	xor		rax, rax
 
-	call		_ft_ispunct
-	cmp		rax, 1
-	je			end
+	cmp		rdi, 32
+	jl			end
 
-	call		_ft_isspace
+	cmp		rdi, 126
+	jg			end
+
+	inc		rax
+	ret
 
 end:
    ret

@@ -8,6 +8,7 @@ _ft_isspace:
 	jne		end
 
 	inc		rax
+	ret
 
 end:
 	ret

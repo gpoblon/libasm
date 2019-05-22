@@ -11,6 +11,7 @@ _ft_isascii:
 	jg		end
 
 	inc		rax
+	ret
 
 end:
 	ret

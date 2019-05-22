@@ -9,6 +9,7 @@ _ft_isalpha:
 	je		end
 
 	call	_ft_isupper
+	ret
 
 end:
    ret

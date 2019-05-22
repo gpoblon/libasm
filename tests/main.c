@@ -14,6 +14,9 @@ static t_farr const	fun_arr[] = {
 		{ "IS_DIGIT", &test_isdigit },
 		{ "IS_PRINT", &test_isprint },
 		{ "IS_ALNUM", &test_isalnum },
+		{ "IS_STRLEN", &test_strlen },
+		{ "TOLOWER", &test_tolower },
+		{ "TOUPPER", &test_toupper },
 		{ NULL, NULL }
 	};
 
