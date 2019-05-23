@@ -3,6 +3,7 @@
 		"unistd.h": "c",
 		"ft_func.h": "c",
 		"stdio.h": "c",
-		"libfts.h": "c"
+		"libfts.h": "c",
+		"stdlib.h": "c"
 	}
 }

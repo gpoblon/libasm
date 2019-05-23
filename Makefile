@@ -26,6 +26,9 @@ SRC_D		=	src/
 OBJ_D		=	obj/
 OBJ_P		=	$(addprefix $(OBJ_D), $(SRC:.s=.o))
 
+UNIT_TEST	=	libtest/
+UNIT_EXEC	=	libftASM_tester
+
 CC			=	nasm
 FLAGS		=	-f macho64
 
@@ -55,11 +58,24 @@ OVERRIDE	=	`echo "\r\033[K"`
 CURSOR_R	=	`echo "$$(tput cols) - 39"|bc`
 PROJECT		=	"LIBFTASM"
 
+test:		$(NAME)
+			@make -C $(UNIT_TEST)
+			@./$(UNIT_TEST)/$(UNIT_EXEC)
+
+testception: $(NAME)
+			@make -C $(UNIT_TEST)
+			@./$(UNIT_TEST)/$(UNIT_EXEC) --test
+
 clean:
+			@make -C $(UNIT_TEST) clean
+			@echo "$(CYAN)$(PROJECT) | clean $(RED)❌  $(UNIT_TEST) object files cleaned$(WHITE)"
 			@rm -rf $(OBJ_D)
+			@rm -rf $(UNIT_EXEC)
 			@echo "$(CYAN)$(PROJECT) | clean $(RED)❌  object files cleaned$(WHITE)"
 
 fclean:
+			@make -C $(UNIT_TEST) fclean
+			@echo "$(CYAN)$(PROJECT) | fclean $(RED)❌  test lib ($(UNIT_EXEC)) cleaned$(WHITE)"
 			@rm -rf $(NAME)
 			@echo "$(CYAN)$(PROJECT) | fclean $(RED)❌  static lib ($(NAME)) cleaned$(WHITE)"
 			@rm -rf $(OBJ_D)
