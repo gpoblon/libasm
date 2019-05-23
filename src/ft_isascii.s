@@ -12,6 +12,7 @@ _ft_isascii:
 	cmp		rdi, 127
 	jg		end
 
+success:
 	inc		rax
 
 end:

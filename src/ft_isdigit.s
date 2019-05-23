@@ -12,6 +12,7 @@ _ft_isdigit:
 	cmp		rdi, 57
 	jg		end
 
+success:
 	inc		rax
 
 end:

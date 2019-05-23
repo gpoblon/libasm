@@ -12,6 +12,7 @@ _ft_isupper:
 	cmp		rdi, 90
 	jg		end
 
+success:
 	inc		rax
 
 end:

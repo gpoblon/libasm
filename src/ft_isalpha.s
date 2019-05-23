@@ -9,7 +9,6 @@ _ft_isalpha:
 	call	_ft_islower
 	cmp		rax, 1
 	je		end
-
 	call	_ft_isupper
 
 end:

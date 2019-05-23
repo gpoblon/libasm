@@ -12,6 +12,7 @@ _ft_islower:
 	cmp		rdi, 122
 	jg		end
 
+success:
 	inc		rax
 
 end:

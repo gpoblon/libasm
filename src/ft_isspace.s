@@ -7,8 +7,15 @@ _ft_isspace:
 	xor		rax, rax
 
 	cmp		rdi, 32
-	jne		end
+	je		success
 
+	cmp		rdi, 9
+	jl		end
+
+	cmp		rdi, 13
+	jg		end
+
+success:
 	inc		rax
 
 end:

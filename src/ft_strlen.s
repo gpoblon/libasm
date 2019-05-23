@@ -4,14 +4,20 @@ section .text
 _ft_strlen:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	push	rbx
+	push	rcx
 
-loop:
-	cmp		[rdi + rax], byte 0
-	je		end
-	inc		rax
-	jmp		loop
+	xor		al, al
+	mov		rbx, rdi
+	mov		rcx, 0xffffffff
+
+	repne	scasb
+
+	sub		rdi, rbx
+	mov		rax, rdi
 
 end:
+	pop		rcx
+	pop		rbx
 	leave
 	ret

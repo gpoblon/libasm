@@ -12,6 +12,7 @@ _ft_isprint:
 	cmp		rdi, 126
 	jg			end
 
+success:
 	inc		rax
 
 end:

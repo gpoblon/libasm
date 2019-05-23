@@ -6,6 +6,13 @@ section .text
 _ft_test:
 	push	rbp
 	mov		rbp, rsp
+	xor		rax, rax
+
+loop:
+	cmp		[rdi + rax], byte 0
+	je		end
+	inc		rax
+	jmp		loop
 
 end:
 	leave
