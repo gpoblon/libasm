@@ -2,6 +2,8 @@ section .text
 	global _ft_strlen
 
 _ft_strlen:
+	push	rbp
+	mov		rbp, rsp
 	xor		rax, rax
 
 loop:
@@ -11,4 +13,5 @@ loop:
 	jmp		loop
 
 end:
+	leave
 	ret

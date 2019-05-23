@@ -2,6 +2,8 @@ section .text
     global	_ft_islower
 
 _ft_islower:
+	push	rbp
+	mov		rbp, rsp
 	xor		rax, rax
 
 	cmp		rdi, 97
@@ -11,7 +13,7 @@ _ft_islower:
 	jg		end
 
 	inc		rax
-	ret
 
 end:
+	leave
 	ret

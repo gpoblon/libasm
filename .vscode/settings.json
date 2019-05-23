@@ -1,9 +1,32 @@
 {
 	"files.associations": {
-		"unistd.h": "c",
-		"ft_func.h": "c",
-		"stdio.h": "c",
-		"libfts.h": "c",
-		"stdlib.h": "c"
-	}
+		"*.h": "c",
+		"*.frag": "c",
+		"*.vert": "c",
+		"istream": "c",
+		"ios": "c",
+		"locale": "c",
+		"bitset": "c",
+		"initializer_list": "c",
+		"iterator": "c",
+		"memory": "c",
+		"string": "c",
+		"string_view": "c",
+		"utility": "c",
+		"ratio": "c",
+		"__split_buffer": "c",
+		"vector": "c",
+		"chrono": "c",
+		"__locale": "c",
+		"__string": "c"
+	},
+	"editor.formatOnSave": true,
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "all",
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"C_Cpp.formatting": "Disabled",
+	"C_Cpp.navigation.length": 80,
 }

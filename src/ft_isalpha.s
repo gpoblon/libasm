@@ -4,12 +4,14 @@ section .text
 	extern  _ft_isupper
 
 _ft_isalpha:
+	push	rbp
+	mov		rbp, rsp
 	call	_ft_islower
 	cmp		rax, 1
 	je		end
 
 	call	_ft_isupper
-	ret
 
 end:
-   ret
+	leave
+	ret

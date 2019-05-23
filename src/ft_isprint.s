@@ -1,10 +1,9 @@
 section .text
 	global	_ft_isprint
-	extern	_ft_isalnum
-	extern	_ft_ispunct
-	extern	_ft_isspace
 
 _ft_isprint:
+	push	rbp
+	mov		rbp, rsp
 	xor		rax, rax
 
 	cmp		rdi, 32
@@ -14,7 +13,7 @@ _ft_isprint:
 	jg			end
 
 	inc		rax
-	ret
 
 end:
-   ret
+	leave
+	ret

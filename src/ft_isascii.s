@@ -2,6 +2,8 @@ section .text
     global	_ft_isascii
 
 _ft_isascii:
+	push	rbp
+	mov		rbp, rsp
 	xor		rax, rax
 
 	cmp		rdi, 0
@@ -11,7 +13,7 @@ _ft_isascii:
 	jg		end
 
 	inc		rax
-	ret
 
 end:
+	leave
 	ret

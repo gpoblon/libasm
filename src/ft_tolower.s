@@ -3,6 +3,8 @@ section .text
     extern  _ft_isupper
 
 _ft_tolower:
+	push	rbp
+	mov		rbp, rsp
     push    rdi
     call    _ft_isupper
     mov     rbx, rax
@@ -12,4 +14,5 @@ _ft_tolower:
     add     rax, 32
 
 end:
+	leave
 	ret

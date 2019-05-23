@@ -4,12 +4,14 @@ section .text
 	extern	_ft_isdigit
 
 _ft_isalnum:
+	push	rbp
+	mov		rbp, rsp
 	call	_ft_isalpha
 	cmp		rax, 1
 	je		end
 
 	call	_ft_isdigit
-	ret
 
 end:
-   ret
+	leave
+	ret

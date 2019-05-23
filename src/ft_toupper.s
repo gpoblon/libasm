@@ -5,6 +5,8 @@ section .text
 	extern  _ft_islower
 
 _ft_toupper:
+	push	rbp
+	mov		rbp, rsp
 	push    rdi
 	call    _ft_islower
 	mov     rbx, rax
@@ -14,4 +16,5 @@ _ft_toupper:
 	sub     rax, 32
 
 end:
+	leave
 	ret
