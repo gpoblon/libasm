@@ -58,6 +58,10 @@ OVERRIDE	=	`echo "\r\033[K"`
 CURSOR_R	=	`echo "$$(tput cols) - 39"|bc`
 PROJECT		=	"LIBFTASM"
 
+light_test:	$(NAME)
+			@gcc main.c -L./ -lfts -o light_test
+			@./light_test
+
 test:		$(NAME)
 			@make -C $(UNIT_TEST)
 			@./$(UNIT_TEST)/$(UNIT_EXEC)
@@ -79,6 +83,7 @@ fclean:
 			@rm -rf $(NAME)
 			@echo "$(CYAN)$(PROJECT) | fclean $(RED)❌  static lib ($(NAME)) cleaned$(WHITE)"
 			@rm -rf $(OBJ_D)
+			@rm -rf light_test
 			@echo "$(CYAN)$(PROJECT) | fclean $(RED)❌  object files cleaned$(WHITE)"
 
 re:	fclean all

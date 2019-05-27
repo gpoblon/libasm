@@ -48,7 +48,7 @@ buffer:         resb    64              ; reserve 64 bytes
 wordvar:        resw    1               ; reserve a word
 realarray:      resq    10              ; array of ten reals
 ```
-- *.text*: contient notre code 
+- *.text*: contient notre code
 
 ### Instructions
 
@@ -75,13 +75,13 @@ realarray:      resq    10              ; array of ten reals
 `jnge`			jump if not greater or equal)
 etc...
 
-#### 
+####
 `push	x`		Decrement rsp by the size of the operand, then store x in [rsp]
 `pop	x`		Move [rsp] into x, then increment rsp by the size of the operand
 `jnz	label` 	If the processor’s Z (zero) flag, is set, jump to the given label
 `call	label`	Push the address of the next instruction, then jump to the label
 `db`			A pseudo-instruction that declares bytes that will be in memory when the program runs
-`ret`			Pop into the instruction pointer 
+`ret`			Pop into the instruction pointer
 
 ### Syscalls
 Semblable a une fonction:
