@@ -4,20 +4,13 @@ section .text
 _ft_strlen:
 	push	rbp
 	mov		rbp, rsp
-	push	rbx
-	push	rcx
 
 	xor		al, al
-	mov		rbx, rdi
 	mov		rcx, 0xffffffff
-
-	repne	scasb
-
-	sub		rdi, rbx
-	mov		rax, rdi
+	repnz	scasb
+	mov		rax, 0xfffffffe
+	sub		rax, rcx
 
 end:
-	pop		rcx
-	pop		rbx
 	leave
 	ret
