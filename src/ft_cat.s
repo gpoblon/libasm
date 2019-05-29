@@ -1,7 +1,7 @@
 %define MACH_SYSCALL(nb)	0x2000000 | nb
 %define STDOUT				1
 %define READ				3
-%define BUFF_SIZE			2048
+%define BUFF_SIZE			1024
 %define WRITE				4
 
 	section	.text
@@ -11,12 +11,12 @@
 _ft_cat:
 	push	rbp
 	mov		rbp, rsp
-	cmp		rdi, 0
+	cmp		rdi, -1
 	jle		end
 
 read:
 	push	rdi
-	mov		rsi, buff
+	lea		rsi, [rel buff]
 	mov		rdx, BUFF_SIZE
 	mov		rax, MACH_SYSCALL(READ)
 	syscall

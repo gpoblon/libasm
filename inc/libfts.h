@@ -27,6 +27,23 @@ int				ft_islower(int c);
 /*
 ** Part 2
 */
-unsigned long	ft_strlen(const char *s);
+size_t			ft_strlen(const char *s);
+void			*ft_memset(void *b, int c, size_t len);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+char			*ft_strdup(const char *s);
+
+/*
+** Part 3
+*/
+void			ft_cat(int fd);
+
+/*
+** Bonus part
+*/
+int				ft_isupper(int c);
+int				ft_islower(int c);
+int				ft_isspace(int c);
+int				ft_putchar(int c);
+int				ft_abs(int i);
 
 #endif

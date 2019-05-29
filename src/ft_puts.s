@@ -18,10 +18,12 @@ _ft_puts:
 	push	rbp
 	mov		rbp, rsp
 	push	rsi
+	push	rdi
 	cmp		rdi, 0
 	je		null_err
-	lea		rsi, [rel rdi]
+	lea		rsi, [rsp]
 	call	_ft_strlen
+	pop		rdi
 	mov		rdx, rax
 	mov		rdi, STDOUT
 	mov		rax, MACH_SYSCALL(WRITE)
