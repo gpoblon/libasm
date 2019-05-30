@@ -9,9 +9,7 @@ _ft_abs:
 	jge		end
 
 rev_neg:
-	shr		edi, 31
-	xor		eax, edi
-	sub		eax, edi
+	neg eax
 
 end:
 	leave

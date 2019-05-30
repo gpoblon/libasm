@@ -17,9 +17,13 @@ write:
 	mov		rdi, STDOUT
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
-	cmp		rax, -1
-	je		end
+	jc		error
 	pop		rax
+	jmp		end
+
+error:
+	pop		rax
+	mov		eax, -1
 
 end:
 	leave

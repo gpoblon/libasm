@@ -11,8 +11,8 @@
 _ft_cat:
 	push	rbp
 	mov		rbp, rsp
-	cmp		rdi, -1
-	jle		end
+	cmp		edi, 0
+	jl		end
 
 read:
 	push	rdi
@@ -20,6 +20,7 @@ read:
 	mov		rdx, BUFF_SIZE
 	mov		rax, MACH_SYSCALL(READ)
 	syscall
+	jc		error
 
 write:
 	mov		rdx, rax ; contains the len of the buffer read (read ret)
@@ -28,13 +29,17 @@ write:
 	mov		rdi, STDOUT
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc		error
 	pop		rdx ; put back the read ret in rdx
 
 read_ret_check:
 	pop		rdi ; put back the fd in rdi
 	cmp		rdx, 0
 	jne		read
+	jmp		end
 
+error:
+	mov		eax, -1
 end:
 	leave
 	ret

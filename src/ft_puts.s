@@ -19,19 +19,21 @@ _ft_puts:
 	mov		rbp, rsp
 	push	rsi
 	push	rdi
-	cmp		rdi, 0
-	je		null_err
-	lea		rsi, [rsp]
+	or		rdi, rdi
+	jz		null_err
+	lea		rsi, [rdi]
 	call	_ft_strlen
 	pop		rdi
 	mov		rdx, rax
 	mov		rdi, STDOUT
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc		error
 	lea		rsi, [rel newline.str]
 	mov		rdx, newline.len
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc		error
 	jmp		end
 
 null_err:
@@ -40,7 +42,10 @@ null_err:
 	mov		rdi, STDOUT
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
-	mov		rax, -1
+	jc		error
+	jmp		error
+error:
+	mov		eax, -1
 end:
 	pop		rdx
 	leave
