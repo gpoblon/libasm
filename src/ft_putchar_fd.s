@@ -1,14 +1,15 @@
 %define MACH_SYSCALL(nb)	0x2000000 | nb
-%define STDOUT				1
 %define WRITE				4
 
 	section .text
-	global _ft_putchar
+	global _ft_putchar_fd
 
-_ft_putchar:
+_ft_putchar_fd:
 	push	rbp
 	mov		rbp, rsp
 	sub		rsp, 0x10
+	cmp		esi, 0
+	jl		error
 
 set_char:
 	mov		dl, dil
@@ -17,7 +18,7 @@ set_char:
 	mov		[rbp - 0x8], rdi
 
 write:
-	mov		rdi, STDOUT
+	mov		rdi, rsi
 	lea		rsi, [rbp - 0x8]
 	mov		rdx, 1
 	mov		eax, MACH_SYSCALL(WRITE)

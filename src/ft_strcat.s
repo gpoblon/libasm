@@ -1,11 +1,11 @@
 	section	.text
 	global	_ft_strcat
-	extern	_ft_strlen
 
 _ft_strcat:
 	push	rbp
 	mov		rbp, rsp
-	push	rdi
+	sub		rsp, 0x10
+	mov		[rbp - 0x8], rdi
 
 iter_first:
 	cmp		[rdi], byte 0
@@ -24,6 +24,6 @@ copy_sec:
 
 end:
 	mov		[rdi], byte 0
-	pop		rax
+	mov		rax, [rbp - 0x8]
 	leave
 	ret

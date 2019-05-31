@@ -4,12 +4,13 @@ section .text
 _ft_memset:
 	push	rbp
 	mov		rbp, rsp
-	push	rdi
+	sub		rsp, 0x10
+	mov		[rbp - 0x8], rdi
 	mov		rcx, rdx
 	mov		al, sil
 	rep		stosb
 
 end:
-	pop		rax
+	mov		rax, [rbp - 0x8]
 	leave
 	ret

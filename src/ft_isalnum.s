@@ -7,7 +7,7 @@ _ft_isalnum:
 	push	rbp
 	mov		rbp, rsp
 	call	_ft_isalpha
-	cmp		rax, 1
+	cmp		eax, 1
 	je		end
 
 	call	_ft_isdigit

@@ -4,16 +4,16 @@ section .text
 _ft_isupper:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	xor		eax, eax
 
-	cmp		rdi, 65
+	cmp		edi, 65
 	jl		end
 
-	cmp		rdi, 90
+	cmp		edi, 90
 	jg		end
 
 success:
-	inc		rax
+	inc		eax
 
 end:
 	leave

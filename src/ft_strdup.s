@@ -7,18 +7,19 @@
 _ft_strdup:
 	push	rbp
 	mov		rbp, rsp
-	push	rdi
+	sub		rsp, 0x10
+	mov		[rbp - 0x8], rdi
 	call	_ft_strlen
-	cmp		rax, 0
-	je		end
+	or		rax, rax
+	jz		end
 	mov		rdi, rax
 	inc		rdi
-	push	rdi
+	mov		[rbp - 0x10], rdi
 	call	_malloc
-	cmp		rax, 0
-	je		end
-	pop		rdx
-	pop		rsi
+	or		rax, rax
+	jz		end
+	mov		rdx, [rbp - 0x10]
+	mov		rsi, [rbp - 0x8]
 	mov		rdi, rax
 	call	_ft_memcpy
 

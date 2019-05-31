@@ -1,7 +1,6 @@
 NAME		=	libfts.a
 
 SRC			=	\
-ft_test.s \
 ft_bzero.s \
 ft_isalpha.s \
 ft_isdigit.s \
@@ -9,6 +8,8 @@ ft_isalnum.s \
 ft_isascii.s \
 ft_isprint.s \
 ft_puts.s \
+ft_putstr.s \
+ft_putstr_fd.s \
 ft_strcat.s \
 ft_toupper.s \
 ft_tolower.s \
@@ -21,6 +22,7 @@ ft_islower.s \
 ft_isspace.s \
 ft_isupper.s \
 ft_putchar.s \
+ft_putchar_fd.s \
 ft_abs.s
 
 SRC_D		=	src/

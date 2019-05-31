@@ -4,19 +4,19 @@ section .text
 _ft_isspace:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	xor		eax, eax
 
-	cmp		rdi, 32
+	cmp		edi, 32
 	je		success
 
-	cmp		rdi, 9
+	cmp		edi, 9
 	jl		end
 
-	cmp		rdi, 13
+	cmp		edi, 13
 	jg		end
 
 success:
-	inc		rax
+	inc		eax
 
 end:
 	leave

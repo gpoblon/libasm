@@ -4,17 +4,16 @@ section .text
 _ft_islower:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	xor		eax, eax
 
-	cmp		rdi, 97
+	cmp		edi, 97
 	jl		end
 
-	cmp		rdi, 122
+	cmp		edi, 122
 	jg		end
 
 success:
-	inc		rax
-
+	inc		eax
 end:
 	leave
 	ret

@@ -4,16 +4,16 @@ section .text
 _ft_isdigit:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	xor		eax, eax
 
-	cmp		rdi, 48
+	cmp		edi, 48
 	jl		end
 
-	cmp		rdi, 57
+	cmp		edi, 57
 	jg		end
 
 success:
-	inc		rax
+	inc		eax
 
 end:
 	leave

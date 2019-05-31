@@ -4,16 +4,16 @@ section .text
 _ft_isascii:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	xor		eax, eax
 
-	cmp		rdi, 0
+	cmp		edi, 0
 	jl		end
 
-	cmp		rdi, 127
+	cmp		edi, 127
 	jg		end
 
 success:
-	inc		rax
+	inc		eax
 
 end:
 	leave

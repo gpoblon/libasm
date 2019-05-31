@@ -4,16 +4,16 @@ section .text
 _ft_isprint:
 	push	rbp
 	mov		rbp, rsp
-	xor		rax, rax
+	xor		eax, eax
 
-	cmp		rdi, 32
-	jl			end
+	cmp		edi, 32
+	jl		end
 
-	cmp		rdi, 126
-	jg			end
+	cmp		edi, 126
+	jg		end
 
 success:
-	inc		rax
+	inc		eax
 
 end:
 	leave
