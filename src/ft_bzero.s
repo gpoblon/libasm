@@ -1,25 +1,28 @@
 	section .text
 	global _ft_bzero
 
-loopbyte:
-	sub		rdx, 4
-	mov		[rdi + rdx], dword 0
-	cmp		rdx, 4
-	jge		loopbyte
 _ft_bzero:
 	push	rbp
 	mov		rbp, rsp
 	mov		rdx, rsi
-;	cmp		rdx, 4
-;	jge		loopbyte
-	cmp		rdx, 0
-	je		end
+	cmp		rdx, 4
+	jl		zero_check
+
+loopbyte:
+	sub		rdx, 4
+	mov		dword [rdi + rdx], 0
+	cmp		rdx, 4
+	jge		loopbyte
+
+zero_check:
+	or		rdx, rdx
+	jz		end
 
 loop:
-	sub		rdx, 1
+	dec		rdx
 	mov		[rdi + rdx], byte 0
-	cmp		rdx, 0
-	jne		loop
+	or		rdx, rdx
+	jnz		loop
 
 end:
 	leave
