@@ -10,11 +10,8 @@ _ft_strdup:
 	sub		rsp, 0x10
 	mov		[rbp - 0x8], rdi
 	call	_ft_strlen
-	or		rax, rax
-	jz		end
-	mov		rdi, rax
-	inc		rdi
-	mov		[rbp - 0x10], rdi
+	inc		rax
+	mov		[rbp - 0x10], rax
 	call	_malloc
 	or		rax, rax
 	jz		end

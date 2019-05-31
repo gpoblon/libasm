@@ -10,9 +10,9 @@ _ft_toupper:
 	sub		rsp, 0x10
 	mov		[rbp - 0x8], edi
 	call    _ft_islower
-	mov     ebx, eax
+	mov     edx, eax
 	mov		eax, [rbp - 0x8]
-	or		ebx, ebx
+	or		edx, edx
 	jz		end
 	sub     eax, 32
 

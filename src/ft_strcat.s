@@ -16,8 +16,8 @@ iter_first:
 copy_sec:
 	cmp		[rsi], byte 0
 	je		end
-	mov		rbx, [rsi]
-	mov		[rdi], rbx
+	mov		rdx, [rsi]
+	mov		[rdi], rdx
 	inc		rdi
 	inc		rsi
 	jmp		copy_sec

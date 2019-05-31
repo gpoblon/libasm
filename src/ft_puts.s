@@ -19,8 +19,8 @@ _ft_puts:
 	or		rdi, rdi
 	jz		null_err
 	call	_ft_putstr
-	or		eax, eax
-	jz		end
+
+add_newline:
 	mov		rdi, NEWLINE
 	call	_ft_putchar
 	jmp		end
