@@ -12,6 +12,7 @@ _ft_strdup:
 	call	_ft_strlen
 	inc		rax
 	mov		[rbp - 0x10], rax
+	mov		rdi, rax
 	call	_malloc
 	or		rax, rax
 	jz		end
